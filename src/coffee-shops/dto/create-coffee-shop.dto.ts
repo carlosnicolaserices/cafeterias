@@ -66,7 +66,7 @@ class RedSocialDto {
 
 // DTO PRINCIPAL
 
-export class CreateCafeteriaDto {
+export class CreateCoffeeShopDto {
   @IsString() nombre: string;
   @IsString() slug: string;
   @IsBoolean() @IsOptional() activo: boolean;

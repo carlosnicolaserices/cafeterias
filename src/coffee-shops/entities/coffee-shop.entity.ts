@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-export type CafeteriaDocument = HydratedDocument<Cafeteria>;
+export type CoffeeShopDocument = HydratedDocument<CoffeeShop>;
 
 // --- SUB-ESQUEMAS (Objetos Anidados) ---
 
@@ -168,7 +168,7 @@ class Contacto {
 // --- ESQUEMA PRINCIPAL (ROOT) ---
 
 @Schema({ collection: 'cafeterias', timestamps: true })
-export class Cafeteria {
+export class CoffeeShop {
   @Prop({ required: true }) nombre: string;
   @Prop({ required: true, unique: true }) slug: string;
   @Prop({ default: true }) activo: boolean;
@@ -200,5 +200,5 @@ export class Cafeteria {
   @Prop({ type: [RedSocialItem] }) redsocial: RedSocialItem[];
 }
 
-export const CafeteriaSchema = SchemaFactory.createForClass(Cafeteria);
-CafeteriaSchema.index({ ubicacion: '2dsphere' });
+export const CoffeeShopSchema = SchemaFactory.createForClass(CoffeeShop);
+CoffeeShopSchema.index({ ubicacion: '2dsphere' });
